@@ -1,11 +1,11 @@
 from fastapi import APIRouter
 from pymongo import MongoClient
 
-from src.api.models.wc import WC
+from app.api.models.wc import WC
 
 
 # TODO: URI & Name as Docker env vars
-MONGODB_URI = "mongodb://localhost:27016"
+MONGODB_URI = "mongodb://0.0.0.0:27016"
 DATABASE_NAME = "mekgo"
 
 client = MongoClient(MONGODB_URI)

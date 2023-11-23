@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.api.endpoints import wc
+from app.api.endpoints import wc
 
 
 app = FastAPI()
