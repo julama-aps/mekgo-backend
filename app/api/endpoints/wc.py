@@ -5,7 +5,7 @@ from app.api.models.wc import WC
 
 
 # TODO: URI & Name as Docker env vars
-MONGODB_URI = "mongodb://0.0.0.0:27016"
+MONGODB_URI = "mongodb://192.168.1.33:27016"
 DATABASE_NAME = "mekgo"
 
 client = MongoClient(MONGODB_URI)
@@ -22,7 +22,7 @@ def read_wc(wc_id: int):
     return {"message": f"Read item with ID: {wc_id}"}
 
 @router.post("/insert_wc/")
-def insert_item(wc: WC):
+def insert_wc(wc: WC):
     collection = db.wcs
     inserted_wc = collection.insert_one(wc.dict())
     
