@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Body, HTTPException, status
+from fastapi.responses import Response
 
 import motor.motor_asyncio
-from bson import ObjectId
 from pymongo import ReturnDocument
-from fastapi.responses import Response
+
+from bson import ObjectId
 
 from app.api.models.wc import WCModel, UpdateWCModel, WCCollection
 
