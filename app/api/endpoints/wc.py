@@ -1,3 +1,4 @@
+import os
 from fastapi import APIRouter, Body, HTTPException, status
 from fastapi.responses import Response
 
@@ -6,14 +7,10 @@ from pymongo import ReturnDocument
 
 from bson import ObjectId
 
-from app.api.models.wc import WCModel, UpdateWCModel, WCCollection
+from api.models.wc import WCModel, UpdateWCModel, WCCollection
 
 
-# TODO: URI & Name as Docker env vars
-MONGODB_URI = "mongodb://192.168.1.33:27016"
-DATABASE_NAME = "mekgo"
-
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URI)
+client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
 db = client.mekgo
 wcs_collection = db.get_collection("wcs")
 
