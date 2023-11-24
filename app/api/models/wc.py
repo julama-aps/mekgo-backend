@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-# TODO: Location real data
+# TODO: Handle _id ObjectId from MongoDB
 class WC(BaseModel):
     title: str
     comment: str
